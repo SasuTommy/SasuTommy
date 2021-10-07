@@ -1,0 +1,11 @@
+import java.util.Random;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Random rand = new Random();
+        int a = rand.nextInt(11);
+        System.out.println("Wylosowana Liczba: "+a);
+        System.out.println("Pierwiastek kwadratowy z tej liczby to: "+Math.sqrt(a));
+	}
+}
