@@ -1,0 +1,30 @@
+package com.company;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main{
+    public static void main (String[]args)
+  {
+    Random rand = new Random ();
+    Scanner scan = new Scanner (System.in);
+
+        System.out.println ("Podaj pierwszy zakres do stworzenia trojkata: ");
+        int a = scan.nextInt ();
+        System.out.println("Podaj drugi zakres do stworzenia trojkata: ");
+        int b = scan.nextInt();
+        
+        int x = rand.nextInt( (b-a+1)+a);
+        int y = rand.nextInt( (b-a+1)+a);
+        int z = rand.nextInt( (b-a+1)+a);
+        
+        
+        boolean trojkat=true;
+        if(x+y>z && x+z>y && z+y>x ){
+        System.out.println (trojkat);
+        }else{
+            trojkat=false;
+            System.out.println (trojkat);
+        }
+  }
+}
