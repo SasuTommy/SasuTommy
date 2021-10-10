@@ -1,0 +1,36 @@
+ppackage circle;
+
+import java.awt.*;
+
+public class App {
+
+    public static void main(String[] args) {
+        Circle circle = new Circle(new Point(0, 0), 2);
+
+        System.out.println(circle.getArea());                                   
+        System.out.println(circle.getDiameter());                               
+        System.out.println(circle.getRadius());                                 
+        System.out.println(circle.isPointInsideCircle(new Point(1, 1)));  
+        System.out.println(circle.isPointInsideCircle(new Point(-1, -1)));  
+        System.out.println(circle.isPointInsideCircle(new Point(0, 2)));  
+        System.out.println(circle.isPointInsideCircle(new Point(0, -2))); 
+        System.out.println(circle.isPointInsideCircle(new Point(2, 0)));  
+        System.out.println(circle.isPointInsideCircle(new Point(-2, 0))); 
+
+        Circle circleByRectangle = Circle.createCircleCircumscribedByRectangle(new Rectangle(-2, -1, 4, 2));
+
+        System.out.println(circleByRectangle.getRadius());      
+        System.out.println(circleByRectangle.getCenterCircle().getX() + " " + circleByRectangle.getCenterCircle().getY());      
+
+        Circle circleInRectangle = Circle.createCircleInscribedInRectangle(new Rectangle(-2, -2, 4, 4));
+        System.out.println(circleInRectangle.getRadius());      
+        System.out.println(circleInRectangle.getCenterCircle().getX() + " " + circleInRectangle.getCenterCircle().getY());     
+
+        try{
+            Circle.createCircleInscribedInRectangle(new Rectangle(-2, -2, 4, 8));   
+            System.out.println("Something went wrong!");
+        }catch(IllegalArgumentException e){
+            System.out.println("Everything ok.");
+        }
+    }
+}
